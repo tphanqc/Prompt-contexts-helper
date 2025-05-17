@@ -1,0 +1,170 @@
+1- General Text to Structured JSON
+
+Convert the following raw text into a well-structured JSON format. Extract key-value pairs, lists, or nested objects where applicable. Ensure the output is valid JSON.
+
+**Raw Text:**  
+{Insert raw text here}
+
+**Output Format (Example):**  
+{
+  "key1": "value1",
+  "key2": ["list_item1", "list_item2"],
+  "nested": {
+    "subkey": "subvalue"
+  }
+}
+
+
+2- 
+
+Parse the following log entries into JSON format. Extract timestamp, log level, message, and any additional metadata (e.g., error codes, IPs).
+
+**Log Entry:**  
+[2023-10-05 12:34:56] ERROR: Connection failed (Code: 503) - IP: 192.168.1.1
+
+**Expected JSON Output:**  
+{
+  "timestamp": "2023-10-05 12:34:56",
+  "level": "ERROR",
+  "message": "Connection failed",
+  "metadata": {
+    "code": 503,
+    "ip": "192.168.1.1"
+  }
+}
+
+3- 
+
+Extract the following contact details from the raw text and format them into JSON. Include name, email, phone, and address (if available).
+
+**Raw Text:**  
+John Doe  
+Email: john.doe@example.com  
+Phone: +1 (555) 123-4567  
+Address: 123 Main St, Cityville, USA  
+
+**Expected JSON Output:**  
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "phone": "+1 (555) 123-4567",
+  "address": {
+    "street": "123 Main St",
+    "city": "Cityville",
+    "country": "USA"
+  }
+}
+
+4- 
+
+Convert the following invoice/receipt text into JSON. Extract items, quantities, prices, total, and vendor information.
+
+**Raw Text:**  
+Invoice #: INV-2023-1001  
+Vendor: ABC Corp  
+Date: 2023-10-05  
+Items:  
+- Laptop x1 | $999.99  
+- Mouse x2 | $49.99  
+Total: $1099.97  
+
+**Expected JSON Output:**  
+{
+  "invoice_id": "INV-2023-1001",
+  "vendor": "ABC Corp",
+  "date": "2023-10-05",
+  "items": [
+    {
+      "name": "Laptop",
+      "quantity": 1,
+      "price": 999.99
+    },
+    {
+      "name": "Mouse",
+      "quantity": 2,
+      "price": 49.99
+    }
+  ],
+  "total": 1099.97
+}
+
+5- 
+Extract structured information from the following resume text and convert it into JSON. Include sections like name, education, experience, and skills.
+
+**Raw Text:**  
+Name: Jane Smith  
+Education:  
+- B.Sc. Computer Science, University X (2020)  
+Experience:  
+- Software Engineer at Company Y (2021-Present)  
+Skills: Python, SQL, Cloud Computing  
+
+**Expected JSON Output:**  
+{
+  "name": "Jane Smith",
+  "education": [
+    {
+      "degree": "B.Sc. Computer Science",
+      "institution": "University X",
+      "year": 2020
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "company": "Company Y",
+      "duration": "2021-Present"
+    }
+  ],
+  "skills": ["Python", "SQL", "Cloud Computing"]
+}
+
+6- 
+Convert the following command-line output into JSON. Parse each entry into an object with relevant fields.
+
+**Raw Text (`ls -l` Output):**  
+-rw-r--r-- 1 user group 1024 Oct 5 12:34 file1.txt  
+drwxr-xr-x 2 user group 4096 Oct 5 11:22 dir1  
+
+**Expected JSON Output:**  
+[
+  {
+    "permissions": "-rw-r--r--",
+    "links": 1,
+    "owner": "user",
+    "group": "group",
+    "size": 1024,
+    "date": "Oct 5 12:34",
+    "name": "file1.txt"
+  },
+  {
+    "permissions": "drwxr-xr-x",
+    "links": 2,
+    "owner": "user",
+    "group": "group",
+    "size": 4096,
+    "date": "Oct 5 11:22",
+    "name": "dir1"
+  }
+]
+
+7- 
+Extract structured data from the following social media post and represent it in JSON. Include author, content, timestamp, and reactions (if any).
+
+**Raw Text:**  
+Posted by: @alice  
+Date: 2023-10-05  
+Content: "Just launched my new website! Check it out: example.com"  
+Likes: 42 | Retweets: 5  
+
+**Expected JSON Output:**  
+{
+  "author": "@alice",
+  "date": "2023-10-05",
+  "content": "Just launched my new website! Check it out: example.com",
+  "engagement": {
+    "likes": 42,
+    "retweets": 5
+  }
+}
+
